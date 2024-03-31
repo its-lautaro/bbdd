@@ -13,6 +13,7 @@ Un ejemplo podría ser mantener la edad junto la fecha de nacimiento, la edad po
 
 ### Ciclos de relaciones
 En algunos casos, un ciclo puede generar repetición de información. En este caso, se debe identificar las relaciones responsables de la redundancia y analizar si representa una ventaja o una desventaja.
+
 ![image](https://github.com/its-lautaro/bbdd/assets/67167458/6c0c0b45-93b6-430b-b538-a4e472b44686)
 
 ### Eliminación de atributos polivalentes
@@ -65,4 +66,19 @@ Una tabla tiene como mínimo una clave, pero puede tener más de una. Estas se d
 
 Las claves foráneas, son el atributo o atributos de una tabla que son clave primaria en otra tabla.
 
-La elección 
+En el elección de la clave primaria, por una cuestion de performance, se debe tratar de que sea un identificador simple, del menor tamaño posible. Cuanto mas chica sea la clave, mas eficiente sera el acceso a los elementos de la tabla. La clave elegida se subraya. Por una cuestion de seguridad, deben elegirse campos de dominio autoincremental (no modificables por el usuario, o de modificación minima para evitar el impacto de actualizar otros indices que apunten a este).
+
+Las claves primarias luego se utilizan como indices primarios, y el resto de las claves candidatas, como indices secundarios.
+
+### Integridad Referencial
+La integridad referencial es una propiedad deseable de las bases de datos relacionales. Plantea restriccionesentre tablas, y sirve para mantener la consistencia entre las tuplas de dicha tabla.
+
+Ejemplo, si se tiene que en la tabla facturas se guardan numeros de cliente, es decir que cada factura esta relacionada a un cliente, algunas restricciones que garantizan la integridad referencial son:
+- No se puede crear una factura para un cliente que no existe
+- Todas las facturas deben tener un numero de cliente (no puede ser null)
+- Al borrar un cliente, deberian borrarse *en cascada* todas sus facturas
+
+### Conversion de entidades
+Para el modelo fisico, todas las entidades deben convertirse en tablas. Se pueden agregar campos para indices autoincrementales.
+
+En las relaciones 1 a 1, no es necesario crear dos tablas, se puede crear a una y agregarle los datos de la otra.
