@@ -53,7 +53,7 @@ Ejemplo: Relación *cursa* entre Alumno y Materia. Podría dividirse en *cursa_p
 Operación contraria a la partición.
 
 ## Diseño Físico
-El modelo relacional es un modelo basado en registros ampliamente difundido y tuilizado Es simple, potente y formal. Representa a la BD como una coleccion de archivos (tablas).
+El modelo relacional es un modelo basado en registros ampliamente difundido y utilizado Es simple, potente y formal. Representa a la BD como una coleccion de archivos (tablas).
 
 Para convertir el esquema lógico a un esquema físico, se debe llevar a cabo la eliminación de identificadores externos, la selección de claves, y la conversión de entidades y relaciones a tablas.
 
